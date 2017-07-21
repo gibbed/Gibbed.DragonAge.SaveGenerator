@@ -32,93 +32,87 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="The Stone Prisoner"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding ShaleResults}">
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="The Stone Prisoner">
+            <ItemsControl ItemsSource="{Binding ShaleResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Shale"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Return to Ostagar">
+            <ItemsControl ItemsSource="{Binding CailanResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Cailan"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Warden's Keep">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding KeepOptions}"
+                              Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <RadioButton GroupName="Shale"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
+                            <CheckBox Content="{Binding DisplayName}"
+                                      ToolTip="{Binding DisplayName}"
+                                      IsChecked="{Binding IsSelected}"
+                                      Foreground="White"
+                                      SnapsToDevicePixels="True" />
                         </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Return to Ostagar"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding CailanResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Cailan"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Warden's Keep"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding KeepOptions}"
-                                  Margin="0,0,0,0"
-                                  d:LayoutOverrides="Width">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox Content="{Binding DisplayName}"
-                                          ToolTip="{Binding DisplayName}"
-                                          IsChecked="{Binding IsSelected}"
-                                          Foreground="White"
-                                          SnapsToDevicePixels="True" />
-                            </DataTemplate>
 
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                    <ItemsControl ItemsSource="{Binding KeepResults}"
-                                  HorizontalAlignment="Left">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <RadioButton GroupName="Keep"
-                                             Content="{Binding DisplayName}"
-                                             ToolTip="{Binding DisplayName}"
-                                             IsChecked="{Binding IsSelected}"
-                                             Foreground="White"
-                                             SnapsToDevicePixels="True" />
-                            </DataTemplate>
-
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="The Golems of Amgarrak"
-                      Margin="0">
-                <CheckBox Content="Played"
-                          IsChecked="{Binding GolemStarted}"
-                          Foreground="White" />
-            </GroupBox>
-            <GroupBox Header="Witch Hunt"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding WitchResults}">
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl ItemsSource="{Binding KeepResults}"
+                              Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <RadioButton GroupName="Witch"
+                            <RadioButton GroupName="Keep"
                                          Content="{Binding DisplayName}"
                                          ToolTip="{Binding DisplayName}"
                                          IsChecked="{Binding IsSelected}"
                                          Foreground="White"
                                          SnapsToDevicePixels="True" />
                         </DataTemplate>
+
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="The Golems of Amgarrak">
+            <CheckBox Content="Played"
+                      IsChecked="{Binding GolemStarted}"
+                      Foreground="White" />
+        </GroupBox>
+        <GroupBox Header="Witch Hunt">
+            <ItemsControl ItemsSource="{Binding WitchResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Witch"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

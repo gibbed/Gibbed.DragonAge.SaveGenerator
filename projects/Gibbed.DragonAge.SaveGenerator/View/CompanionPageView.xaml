@@ -32,77 +32,70 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="Recruitment"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding FollowerOptions}"
-                                  Margin="0,0,0,0"
-                                  d:LayoutOverrides="Width">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox Content="{Binding DisplayName}"
-                                          ToolTip="{Binding DisplayName}"
-                                          IsChecked="{Binding IsSelected}"
-                                          Foreground="White"
-                                          SnapsToDevicePixels="True" />
-                            </DataTemplate>
-
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="Zevran"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding ZevranResults}">
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="Recruitment">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding FollowerOptions}"
+                              Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <RadioButton GroupName="Zevran"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
+                            <CheckBox Content="{Binding DisplayName}"
+                                      ToolTip="{Binding DisplayName}"
+                                      IsChecked="{Binding IsSelected}"
+                                      Foreground="White"
+                                      SnapsToDevicePixels="True" />
                         </DataTemplate>
+
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Romance"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding RomanceOptions}"
-                                  Margin="0,0,0,0"
-                                  d:LayoutOverrides="Width">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox Content="{Binding DisplayName}"
-                                          ToolTip="{Binding DisplayName}"
-                                          IsChecked="{Binding IsSelected}"
-                                          Foreground="White"
-                                          SnapsToDevicePixels="True" />
-                            </DataTemplate>
-
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="Isabella"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding IsabellaResults}">
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Zevran">
+            <ItemsControl ItemsSource="{Binding ZevranResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Zevran"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Romance">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding RomanceOptions}"
+                              Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <RadioButton GroupName="Isabella"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
+                            <CheckBox Content="{Binding DisplayName}"
+                                      ToolTip="{Binding DisplayName}"
+                                      IsChecked="{Binding IsSelected}"
+                                      Foreground="White"
+                                      SnapsToDevicePixels="True" />
                         </DataTemplate>
+
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Isabella">
+            <ItemsControl ItemsSource="{Binding IsabellaResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Isabella"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

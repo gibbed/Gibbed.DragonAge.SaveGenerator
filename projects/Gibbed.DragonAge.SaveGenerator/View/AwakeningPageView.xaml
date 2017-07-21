@@ -32,66 +32,61 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="General"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding Options}"
-                                  Margin="0,0,0,0"
-                                  d:LayoutOverrides="Width">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox Content="{Binding DisplayName}"
-                                          ToolTip="{Binding DisplayName}"
-                                          IsChecked="{Binding IsSelected}"
-                                          Foreground="White"
-                                          SnapsToDevicePixels="True" />
-                            </DataTemplate>
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="General"
+                  Margin="0">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding Options}"
+                              Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding DisplayName}"
+                                      ToolTip="{Binding DisplayName}"
+                                      IsChecked="{Binding IsSelected}"
+                                      Foreground="White"
+                                      SnapsToDevicePixels="True" />
+                        </DataTemplate>
 
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="Depths of Depravity"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding ArchitectResults}"
-                                  HorizontalAlignment="Left">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <RadioButton GroupName="Architect"
-                                             Content="{Binding DisplayName}"
-                                             ToolTip="{Binding DisplayName}"
-                                             IsChecked="{Binding IsSelected}"
-                                             Foreground="White"
-                                             SnapsToDevicePixels="True" />
-                            </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Depths of Depravity"
+                  Margin="0">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding ArchitectResults}"
+                              Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton GroupName="Architect"
+                                         Content="{Binding DisplayName}"
+                                         ToolTip="{Binding DisplayName}"
+                                         IsChecked="{Binding IsSelected}"
+                                         Foreground="White"
+                                         SnapsToDevicePixels="True" />
+                        </DataTemplate>
 
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="Defending the Land"
-                      Margin="0">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding DefenseResults}"
-                                  HorizontalAlignment="Left">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <RadioButton GroupName="Defense"
-                                             Content="{Binding DisplayName}"
-                                             ToolTip="{Binding DisplayName}"
-                                             IsChecked="{Binding IsSelected}"
-                                             Foreground="White"
-                                             SnapsToDevicePixels="True" />
-                            </DataTemplate>
-
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Defending the Land"
+                  Margin="0">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding DefenseResults}"
+                              Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton GroupName="Defense"
+                                         Content="{Binding DisplayName}"
+                                         ToolTip="{Binding DisplayName}"
+                                         IsChecked="{Binding IsSelected}"
+                                         Foreground="White"
+                                         SnapsToDevicePixels="True" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

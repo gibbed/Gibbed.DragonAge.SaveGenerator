@@ -32,41 +32,35 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="Kolgrim's Offer"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding LelianaResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Leliana"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Conclusion"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding Options}"
-                              Margin="0,0,0,0"
-                              d:LayoutOverrides="Width">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox Content="{Binding DisplayName}"
-                                      ToolTip="{Binding DisplayName}"
-                                      IsChecked="{Binding IsSelected}"
-                                      Foreground="White"
-                                      SnapsToDevicePixels="True" />
-                        </DataTemplate>
-
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="Kolgrim's Offer">
+            <ItemsControl ItemsSource="{Binding LelianaResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Leliana"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Conclusion">
+            <ItemsControl ItemsSource="{Binding Options}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding DisplayName}"
+                                  ToolTip="{Binding DisplayName}"
+                                  IsChecked="{Binding IsSelected}"
+                                  Foreground="White"
+                                  SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

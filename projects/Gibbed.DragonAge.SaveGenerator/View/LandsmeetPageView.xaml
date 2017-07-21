@@ -32,54 +32,51 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="Ruler"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding KingResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="King"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Alistair's Fate"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding AlistairResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Alistair"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Loghain's Fate"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding LoghainResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Loghain"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="Ruler">
+            <ItemsControl ItemsSource="{Binding KingResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="King"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Alistair's Fate">
+            <ItemsControl ItemsSource="{Binding AlistairResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Alistair"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Loghain's Fate">
+            <ItemsControl ItemsSource="{Binding LoghainResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Loghain"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

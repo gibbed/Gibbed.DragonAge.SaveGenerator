@@ -302,16 +302,19 @@
         <!-- WIZARD STEP LISTING -->
         <HeaderedContentControl Header="{x:Static res:Strings.WizardView_Header_Steps}"
                                 BorderThickness="0,0,10,0"
-                                BorderBrush="#FFE21111">
+                                BorderBrush="#FFE21111"
+                                Focusable="False">
             <ItemsControl ItemsSource="{Binding Pages}"
                           ItemTemplate="{StaticResource WizardStepTemplate}"
+                          Focusable="False"
                           BorderThickness="0" />
         </HeaderedContentControl>
         <!-- CURRENT PAGE AREA -->
         <Border Grid.Column="1"
                 Grid.Row="0">
-            <HeaderedContentControl Content="{Binding CurrentPage}"
-                                    Header="{Binding CurrentPage.DisplayName}" />
+            <HeaderedContentControl Header="{Binding CurrentPage.DisplayName}"
+                                    Content="{Binding CurrentPage}"
+                                    Focusable="False" />
         </Border>
         <Border Grid.Column="0"
                 Grid.Row="1"

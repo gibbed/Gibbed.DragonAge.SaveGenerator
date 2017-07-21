@@ -32,39 +32,36 @@
              Width="Auto"
              Height="Auto"
              VerticalContentAlignment="Top">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="Morrigan's Ritual"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding RitualResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Ritual"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Archdemon"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding ArchdemonResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Archdemon"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="Morrigan's Ritual">
+            <ItemsControl ItemsSource="{Binding RitualResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Ritual"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Archdemon">
+            <ItemsControl ItemsSource="{Binding ArchdemonResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Archdemon"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>

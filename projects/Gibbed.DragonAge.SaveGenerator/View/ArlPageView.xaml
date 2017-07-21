@@ -29,71 +29,72 @@
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="300">
-    <StackPanel HorizontalAlignment="Left"
-                VerticalAlignment="Top">
-        <WrapPanel Margin="0,0,0,0">
-            <GroupBox Header="A Village Under Siege"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding SiegeOptions}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox Content="{Binding DisplayName}"
-                                      ToolTip="{Binding DisplayName}"
-                                      IsChecked="{Binding IsSelected}"
-                                      Foreground="White"
-                                      SnapsToDevicePixels="True" />
-                        </DataTemplate>
+    <WrapPanel Orientation="Horizontal">
+        <GroupBox Header="A Village Under Siege"
+                  Margin="0">
+            <ItemsControl ItemsSource="{Binding SiegeOptions}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding DisplayName}"
+                                  ToolTip="{Binding DisplayName}"
+                                  IsChecked="{Binding IsSelected}"
+                                  Foreground="White"
+                                  SnapsToDevicePixels="True" />
+                    </DataTemplate>
 
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Connor"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding ConnorResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Connor"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Connor"
+                  Margin="0">
+            <ItemsControl ItemsSource="{Binding ConnorResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Connor"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
 
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Ritual"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding RitualResults}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Ritual"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Ritual"
+                  Margin="0">
+            <ItemsControl ItemsSource="{Binding RitualResults}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="Ritual"
+                                     Content="{Binding DisplayName}"
+                                     ToolTip="{Binding DisplayName}"
+                                     IsChecked="{Binding IsSelected}"
+                                     Foreground="White"
+                                     SnapsToDevicePixels="True" />
+                    </DataTemplate>
 
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="Demon"
-                      Margin="0">
-                <ItemsControl ItemsSource="{Binding DemonOptions}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox Content="{Binding DisplayName}"
-                                      ToolTip="{Binding DisplayName}"
-                                      IsChecked="{Binding IsSelected}"
-                                      Foreground="White"
-                                      SnapsToDevicePixels="True" />
-                        </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+        <GroupBox Header="Demon"
+                  Margin="0">
+            <ItemsControl ItemsSource="{Binding DemonOptions}"
+                          Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding DisplayName}"
+                                  ToolTip="{Binding DisplayName}"
+                                  IsChecked="{Binding IsSelected}"
+                                  Foreground="White"
+                                  SnapsToDevicePixels="True" />
+                    </DataTemplate>
 
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
-        </WrapPanel>
-    </StackPanel>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
+    </WrapPanel>
 </UserControl>
