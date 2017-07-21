@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06A59C67-77EC-446D-8A3A-4880FEE98AB7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gibbed.DragonAge.SaveGenerator</RootNamespace>
+    <AssemblyName>Gibbed.DragonAge.SaveGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\crest.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Gibbed.DragonAge.SaveGenerator.Startup</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Game\PlotFlags\ArlConnorResult.cs" />
+    <Compile Include="Game\PlotFlags\ArlDemonOptions.cs" />
+    <Compile Include="Game\PlotFlags\ArlRitualResult.cs" />
+    <Compile Include="Game\PlotFlags\ArlSiegeOptions.cs" />
+    <Compile Include="Game\PlotFlags\AwakeningDefenseResult.cs" />
+    <Compile Include="Game\PlotFlags\AwakeningOptions.cs" />
+    <Compile Include="Game\PlotFlags\AwakeningArchitectResult.cs" />
+    <Compile Include="Game\PlayerBackground.cs" />
+    <Compile Include="Game\PlotFlags\BeastOptions.cs" />
+    <Compile Include="Game\PlotFlags\BeastResult.cs" />
+    <Compile Include="Game\PlotFlags\CircleResult.cs" />
+    <Compile Include="Game\PlayerClass.cs" />
+    <Compile Include="Game\PlotFlags\ClimaxArchdemonResult.cs" />
+    <Compile Include="Game\PlotFlags\ClimaxRitualResult.cs" />
+    <Compile Include="Game\PlotFlags\EpilogueBoonResult.cs" />
+    <Compile Include="Game\PlayerGender.cs" />
+    <Compile Include="Game\PlotFlags\IsabelaOptions.cs" />
+    <Compile Include="Game\PlotFlags\CailanResult.cs" />
+    <Compile Include="Game\PlotFlags\KeepOptions.cs" />
+    <Compile Include="Game\PlotFlags\KeepResult.cs" />
+    <Compile Include="Game\PlotFlags\LandsmeetAlistairResult.cs" />
+    <Compile Include="Game\PlotFlags\LandsmeetKingResult.cs" />
+    <Compile Include="Game\PlotFlags\LandsmeetLoghainResult.cs" />
+    <Compile Include="Game\PlotFlags\LelianaResult.cs" />
+    <Compile Include="Game\PlotFlags\ParagonAnvilResult.cs" />
+    <Compile Include="Game\PlotFlags\ParagonKingResult.cs" />
+    <Compile Include="Game\PlayerRace.cs" />
+    <Compile Include="Game\PlotFlags\FollowerOptions.cs" />
+    <Compile Include="Game\PlotFlags\RomanceOptions.cs" />
+    <Compile Include="Game\PlotFlags\ShaleResult.cs" />
+    <Compile Include="Game\PlotFlags\UrnOptions.cs" />
+    <Compile Include="Game\PlotFlags\WitchResult.cs" />
+    <Compile Include="Game\PlotFlags\ZevranResult.cs" />
+    <Compile Include="NullableBooleanAlternationConverter.cs" />
+    <Compile Include="Game\Plot.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\BinaryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BinaryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\AwakeningPageViewModel.cs" />
+    <Compile Include="ViewModel\BeastPageViewModel.cs" />
+    <Compile Include="ViewModel\CirclePageViewModel.cs" />
+    <Compile Include="ViewModel\ClimaxPageViewModel.cs" />
+    <Compile Include="ViewModel\CompanionPageViewModel.cs" />
+    <Compile Include="ViewModel\DLCPageViewModel.cs" />
+    <Compile Include="ViewModel\EpiloguePageViewModel.cs" />
+    <Compile Include="ViewModel\SummaryPageViewModel.cs" />
+    <Compile Include="ViewModel\LandsmeetPageViewModel.cs" />
+    <Compile Include="ViewModel\OptionViewModel.cs" />
+    <Compile Include="ViewModel\ParagonPageViewModel.cs" />
+    <Compile Include="ViewModel\PlayerPageViewModel.cs" />
+    <Compile Include="ViewModel\ArlPageViewModel.cs" />
+    <Compile Include="ViewModel\UrnPageViewModel.cs" />
+    <Compile Include="ViewModel\BasePageViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel.cs" />
+    <Compile Include="View\AwakeningPageView.xaml.cs">
+      <DependentUpon>AwakeningPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BeastPageView.xaml.cs">
+      <DependentUpon>BeastPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CirclePageView.xaml.cs">
+      <DependentUpon>CirclePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClimaxPageView.xaml.cs">
+      <DependentUpon>ClimaxPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompanionPageView.xaml.cs">
+      <DependentUpon>CompanionPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DLCPageView.xaml.cs">
+      <DependentUpon>DLCPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EpiloguePageView.xaml.cs">
+      <DependentUpon>EpiloguePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SummaryPageView.xaml.cs">
+      <DependentUpon>SummaryPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LandsmeetPageView.xaml.cs">
+      <DependentUpon>LandsmeetPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParagonPageView.xaml.cs">
+      <DependentUpon>ParagonPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerPageView.xaml.cs">
+      <DependentUpon>PlayerPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArlPageView.xaml.cs">
+      <DependentUpon>ArlPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UrnPageView.xaml.cs">
+      <DependentUpon>UrnPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView.xaml.cs">
+      <DependentUpon>WizardView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ImageResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\AwakeningPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BeastPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CirclePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClimaxPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompanionPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DLCPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EpiloguePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SummaryPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LandsmeetPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ParagonPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayerPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ArlPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UrnPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BinaryResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BinaryResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\info.gff" />
+    <None Include="Resources\save.gff" />
+    <Resource Include="Resources\Fonts\PTS55F.ttf" />
+    <Resource Include="Resources\Fonts\Crimson-Bold.ttf" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\shield.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Origin\class_mage.png" />
+    <Resource Include="Resources\Images\Origin\class_rogue.png" />
+    <Resource Include="Resources\Images\Origin\class_warrior.png" />
+    <Resource Include="Resources\Images\Origin\gender_female.png" />
+    <Resource Include="Resources\Images\Origin\gender_male.png" />
+    <Resource Include="Resources\Images\Origin\background_dwarf_commoner.png" />
+    <Resource Include="Resources\Images\Origin\background_dwarf_noble.png" />
+    <Resource Include="Resources\Images\Origin\background_elf_city.png" />
+    <Resource Include="Resources\Images\Origin\background_elf_dalish.png" />
+    <Resource Include="Resources\Images\Origin\background_human_noble.png" />
+    <Resource Include="Resources\Images\Origin\race_dwarf_female.png" />
+    <Resource Include="Resources\Images\Origin\race_dwarf_male.png" />
+    <Resource Include="Resources\Images\Origin\race_elf_female.png" />
+    <Resource Include="Resources\Images\Origin\race_elf_male.png" />
+    <Resource Include="Resources\Images\Origin\race_human_female.png" />
+    <Resource Include="Resources\Images\Origin\race_human_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Origin\background_magi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\crest.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\bioware\projects\Gibbed.Bioware.FileFormats\Gibbed.Bioware.FileFormats.csproj">
+      <Project>{08BE5895-CE01-473F-B8CC-F6924D1926D2}</Project>
+      <Name>Gibbed.Bioware.FileFormats</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterResolveReferences">
+    <ItemGroup>
+      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'">
+        <LogicalName>%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

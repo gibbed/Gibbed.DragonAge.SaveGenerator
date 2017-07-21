@@ -1,0 +1,124 @@
+﻿<!--
+/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
+ * 
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ * 
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ * 
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would
+ *    be appreciated but is not required.
+ * 
+ * 2. Altered source versions must be plainly marked as such, and must not
+ *    be misrepresented as being the original software.
+ * 
+ * 3. This notice may not be removed or altered from any source
+ *    distribution.
+ */
+-->
+<UserControl x:Class="Gibbed.DragonAge.SaveGenerator.View.DLCPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="477"
+             d:DesignWidth="500"
+             Width="Auto"
+             Height="Auto"
+             VerticalContentAlignment="Top">
+    <StackPanel HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+        <WrapPanel Margin="0,0,0,0">
+            <GroupBox Header="The Stone Prisoner"
+                      Margin="0">
+                <ItemsControl ItemsSource="{Binding ShaleResults}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton GroupName="Shale"
+                                         Content="{Binding DisplayName}"
+                                         ToolTip="{Binding DisplayName}"
+                                         IsChecked="{Binding IsSelected}"
+                                         Foreground="White"
+                                         SnapsToDevicePixels="True" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+            <GroupBox Header="Return to Ostagar"
+                      Margin="0">
+                <ItemsControl ItemsSource="{Binding CailanResults}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton GroupName="Cailan"
+                                         Content="{Binding DisplayName}"
+                                         ToolTip="{Binding DisplayName}"
+                                         IsChecked="{Binding IsSelected}"
+                                         Foreground="White"
+                                         SnapsToDevicePixels="True" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+            <GroupBox Header="Warden's Keep"
+                      Margin="0">
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding KeepOptions}"
+                                  Margin="0,0,0,0"
+                                  d:LayoutOverrides="Width">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding DisplayName}"
+                                          ToolTip="{Binding DisplayName}"
+                                          IsChecked="{Binding IsSelected}"
+                                          Foreground="White"
+                                          SnapsToDevicePixels="True" />
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding KeepResults}"
+                                  HorizontalAlignment="Left">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton GroupName="Keep"
+                                             Content="{Binding DisplayName}"
+                                             ToolTip="{Binding DisplayName}"
+                                             IsChecked="{Binding IsSelected}"
+                                             Foreground="White"
+                                             SnapsToDevicePixels="True" />
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="The Golems of Amgarrak"
+                      Margin="0">
+                <CheckBox Content="Played"
+                          IsChecked="{Binding GolemStarted}"
+                          Foreground="White" />
+            </GroupBox>
+            <GroupBox Header="Witch Hunt"
+                      Margin="0">
+                <ItemsControl ItemsSource="{Binding WitchResults}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton GroupName="Witch"
+                                         Content="{Binding DisplayName}"
+                                         ToolTip="{Binding DisplayName}"
+                                         IsChecked="{Binding IsSelected}"
+                                         Foreground="White"
+                                         SnapsToDevicePixels="True" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

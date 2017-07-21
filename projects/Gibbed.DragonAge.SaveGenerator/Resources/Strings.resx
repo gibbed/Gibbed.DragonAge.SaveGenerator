@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArlConnorResult_ConnorFreed" xml:space="preserve">
+    <value>Connor freed</value>
+  </data>
+  <data name="ArlConnorResult_IsoldeKilledConnor" xml:space="preserve">
+    <value>Isolde killed Connor</value>
+  </data>
+  <data name="ArlConnorResult_IsoldeKnockedOutPCKilledConnor" xml:space="preserve">
+    <value>Player knocked out Isolde, killed Connor</value>
+  </data>
+  <data name="ArlConnorResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ArlConnorResult_PCKilledConnor" xml:space="preserve">
+    <value>Player killed Connor</value>
+  </data>
+  <data name="ArlDemonResult_AcceptedOffer" xml:space="preserve">
+    <value>Accepted the demon's offer</value>
+  </data>
+  <data name="ArlDemonResult_Intimidated" xml:space="preserve">
+    <value>Intimidated the demon</value>
+  </data>
+  <data name="ArlRitualResult_CircleDoesRitual" xml:space="preserve">
+    <value>The Circle did the ritual</value>
+  </data>
+  <data name="ArlRitualResult_JowanDoesRitual" xml:space="preserve">
+    <value>Jowan did the ritual</value>
+  </data>
+  <data name="ArlRitualResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ArlSiegeOptions_Abandoned" xml:space="preserve">
+    <value>Refused to help</value>
+  </data>
+  <data name="ArlSiegeOptions_Over" xml:space="preserve">
+    <value>Siege is over</value>
+  </data>
+  <data name="AwakeningArchitectResult_DealWithArchitect" xml:space="preserve">
+    <value>Accepted the Architect's offer</value>
+  </data>
+  <data name="AwakeningArchitectResult_KilledArchitect" xml:space="preserve">
+    <value>Killed the Architect</value>
+  </data>
+  <data name="AwakeningArchitectResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="AwakeningDefenseResult_Farms" xml:space="preserve">
+    <value>Defended the farms</value>
+  </data>
+  <data name="AwakeningDefenseResult_None" xml:space="preserve">
+    <value>None / other</value>
+  </data>
+  <data name="AwakeningDefenseResult_Roads" xml:space="preserve">
+    <value>Defended the trade routes</value>
+  </data>
+  <data name="AwakeningOptions_AmaranthineSaved" xml:space="preserve">
+    <value>Amaranthine was saved</value>
+  </data>
+  <data name="AwakeningOptions_AndersDiedInSiege" xml:space="preserve">
+    <value>Anders died in the siege</value>
+  </data>
+  <data name="AwakeningOptions_AndersRecruited" xml:space="preserve">
+    <value>Recruited Anders</value>
+  </data>
+  <data name="AwakeningOptions_HerrenCompletedSilverite" xml:space="preserve">
+    <value>Obtained Silverite ore</value>
+  </data>
+  <data name="AwakeningOptions_NathanielDiedInSiege" xml:space="preserve">
+    <value>Nathaniel died in the siege</value>
+  </data>
+  <data name="AwakeningOptions_NathanielFriendly" xml:space="preserve">
+    <value>NATHANIEL_FRIENDLY_ELIGIBLE</value>
+  </data>
+  <data name="AwakeningOptions_NathanielRecruited" xml:space="preserve">
+    <value>Recruited Nathaniel</value>
+  </data>
+  <data name="AwakeningOptions_Orlesian" xml:space="preserve">
+    <value>Player is Orlesian Warden (not imported)</value>
+  </data>
+  <data name="AwakeningOptions_VigilsKeepSiegeCompleted" xml:space="preserve">
+    <value>Vigil's Keep siege completed</value>
+  </data>
+  <data name="Background_Dwarf_Commoner" xml:space="preserve">
+    <value>Dwarf Commoner</value>
+  </data>
+  <data name="Background_Dwarf_Noble" xml:space="preserve">
+    <value>Dwarf Noble</value>
+  </data>
+  <data name="Background_Elf_City" xml:space="preserve">
+    <value>City ELf</value>
+  </data>
+  <data name="Background_Elf_Dalish" xml:space="preserve">
+    <value>Dalish Elf</value>
+  </data>
+  <data name="Background_Human_Noble" xml:space="preserve">
+    <value>Human Noble</value>
+  </data>
+  <data name="Background_Magi" xml:space="preserve">
+    <value>Magi</value>
+  </data>
+  <data name="BeastOptions_ZathrianSacrified" xml:space="preserve">
+    <value>Zathrian sacrified himself</value>
+  </data>
+  <data name="BeastResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="BeastResult_SidedWithElves" xml:space="preserve">
+    <value>Sided with the elves</value>
+  </data>
+  <data name="BeastResult_SidedWithWerewolves" xml:space="preserve">
+    <value>Sided with the werewolves</value>
+  </data>
+  <data name="CailanResult_Burned" xml:space="preserve">
+    <value>Burned Cailan in a funeral pyre</value>
+  </data>
+  <data name="CailanResult_Darkspawn" xml:space="preserve">
+    <value>Left Cailan for the Darkspawn</value>
+  </data>
+  <data name="CailanResult_None" xml:space="preserve">
+    <value>Unplayed</value>
+  </data>
+  <data name="CailanResult_Wolves" xml:space="preserve">
+    <value>Left Cailan for the wolves</value>
+  </data>
+  <data name="CircleResult_Mages" xml:space="preserve">
+    <value>Sided with the Mages</value>
+  </data>
+  <data name="CircleResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="CircleResult_Templars" xml:space="preserve">
+    <value>Sided with the Templars</value>
+  </data>
+  <data name="Class_Mage" xml:space="preserve">
+    <value>Mage</value>
+  </data>
+  <data name="Class_Rogue" xml:space="preserve">
+    <value>Rogue</value>
+  </data>
+  <data name="Class_Warrior" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="ClimaxArchdemonResult_AlistairKilledArchdemon" xml:space="preserve">
+    <value>Alistair killed the Archdemon</value>
+  </data>
+  <data name="ClimaxArchdemonResult_LoghainKilledArchdemon" xml:space="preserve">
+    <value>Loghain killed the Archdemon</value>
+  </data>
+  <data name="ClimaxArchdemonResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ClimaxArchdemonResult_PlayerKilledArchdemon" xml:space="preserve">
+    <value>Player killed the Archdemon</value>
+  </data>
+  <data name="ClimaxRitualResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ClimaxRitualResult_RitualWithAlistair" xml:space="preserve">
+    <value>With Alistair</value>
+  </data>
+  <data name="ClimaxRitualResult_RitualWithLoghain" xml:space="preserve">
+    <value>With Loghain</value>
+  </data>
+  <data name="ClimaxRitualResult_RitualWithPlayer" xml:space="preserve">
+    <value>With the player</value>
+  </data>
+  <data name="EpilogueBoonResult_Chancellor" xml:space="preserve">
+    <value>Player named Chancellor</value>
+  </data>
+  <data name="EpilogueBoonResult_Circle" xml:space="preserve">
+    <value>Mages of The Circle of Ferelden freed</value>
+  </data>
+  <data name="EpilogueBoonResult_Dalish" xml:space="preserve">
+    <value>Dalish elves given their own land</value>
+  </data>
+  <data name="EpilogueBoonResult_None" xml:space="preserve">
+    <value>None / Other</value>
+  </data>
+  <data name="FollowerOptions_DogRecruited" xml:space="preserve">
+    <value>Recruited Barkspawn</value>
+  </data>
+  <data name="FollowerOptions_LelianaRecruited" xml:space="preserve">
+    <value>Recruited Leliana</value>
+  </data>
+  <data name="FollowerOptions_ZevranRecruited" xml:space="preserve">
+    <value>Recruited Zevran</value>
+  </data>
+  <data name="Gender_Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Gender_Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="GolemStarted" xml:space="preserve">
+    <value>Played</value>
+  </data>
+  <data name="IsabellaResult_IsabelaAndAlistairThreesome" xml:space="preserve">
+    <value>Threesome with Alistair</value>
+  </data>
+  <data name="IsabellaResult_IsabelaAndLelianaThreesome" xml:space="preserve">
+    <value>Threesome with Leliana</value>
+  </data>
+  <data name="IsabellaResult_IsabelaAndZevranThreesome" xml:space="preserve">
+    <value>Threesome with Zevran</value>
+  </data>
+  <data name="IsabellaResult_IsabelaInFoursome" xml:space="preserve">
+    <value>Foursome</value>
+  </data>
+  <data name="IsabellaResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="IsabellaResult_SleptWith" xml:space="preserve">
+    <value>Slept with Isabella</value>
+  </data>
+  <data name="KeepOptions_AvernusKilled" xml:space="preserve">
+    <value>Killed Avernus</value>
+  </data>
+  <data name="KeepOptions_Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="KeepOptions_SophiaKilled" xml:space="preserve">
+    <value>Killed Sophia</value>
+  </data>
+  <data name="KeepResult_AvernusDoingBadExperiments" xml:space="preserve">
+    <value>Avernus doing bad experiments</value>
+  </data>
+  <data name="KeepResult_AvernusDoingGoodExperiments" xml:space="preserve">
+    <value>Avernus doing good experiments</value>
+  </data>
+  <data name="KeepResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="LandsmeetAlistairResult_Drunkard" xml:space="preserve">
+    <value>Left the party and become a wandering drunk</value>
+  </data>
+  <data name="LandsmeetAlistairResult_Executed" xml:space="preserve">
+    <value>Was executed by Anora</value>
+  </data>
+  <data name="LandsmeetAlistairResult_None" xml:space="preserve">
+    <value>Crowned king / remained a warden</value>
+  </data>
+  <data name="LandsmeetKingResult_AlistairEngagedToAnora" xml:space="preserve">
+    <value>Alistair rules jointly with Anora</value>
+  </data>
+  <data name="LandsmeetKingResult_AlistairEngagedToPlayer" xml:space="preserve">
+    <value>Alistair rules with the player</value>
+  </data>
+  <data name="LandsmeetKingResult_AlistairIsKing" xml:space="preserve">
+    <value>Alistair rules</value>
+  </data>
+  <data name="LandsmeetKingResult_AnoraIsQueen" xml:space="preserve">
+    <value>Anora rules</value>
+  </data>
+  <data name="LandsmeetKingResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="LandsmeetKingResult_PlayerIsKing" xml:space="preserve">
+    <value>Player rules</value>
+  </data>
+  <data name="LandsmeetLoghainResult_Executed" xml:space="preserve">
+    <value>Was executed by Alistair</value>
+  </data>
+  <data name="LandsmeetLoghainResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="LandsmeetLoghainResult_Warden" xml:space="preserve">
+    <value>Recruited into the Grey Wardens</value>
+  </data>
+  <data name="LelianaResult_Killed" xml:space="preserve">
+    <value>Accepted, killed Leliana</value>
+  </data>
+  <data name="LelianaResult_LeftForever" xml:space="preserve">
+    <value>Accepted, Leliana left party</value>
+  </data>
+  <data name="LelianaResult_None" xml:space="preserve">
+    <value>Refused</value>
+  </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Gibbed's Dragon Age Save Generator</value>
+  </data>
+  <data name="PageDisplayName_Arl" xml:space="preserve">
+    <value>3. The Arl of Redcliffe</value>
+  </data>
+  <data name="PageDisplayName_Awakening" xml:space="preserve">
+    <value>12. Awakening</value>
+  </data>
+  <data name="PageDisplayName_Beast" xml:space="preserve">
+    <value>4. Nature of the Beast</value>
+  </data>
+  <data name="PageDisplayName_Circle" xml:space="preserve">
+    <value>2. Broken Circle</value>
+  </data>
+  <data name="PageDisplayName_Climax" xml:space="preserve">
+    <value>8. The Battle of Denerim</value>
+  </data>
+  <data name="PageDisplayName_Companion" xml:space="preserve">
+    <value>10. Companions</value>
+  </data>
+  <data name="PageDisplayName_DLC" xml:space="preserve">
+    <value>11. Downloadable Content</value>
+  </data>
+  <data name="PageDisplayName_Epilogue" xml:space="preserve">
+    <value>9. Epilogue</value>
+  </data>
+  <data name="PageDisplayName_Landsmeet" xml:space="preserve">
+    <value>7. The Landsmeet</value>
+  </data>
+  <data name="PageDisplayName_Paragon" xml:space="preserve">
+    <value>6. A Paragon of Her Kind</value>
+  </data>
+  <data name="PageDisplayName_Player" xml:space="preserve">
+    <value>1. Player</value>
+  </data>
+  <data name="PageDisplayName_Summary" xml:space="preserve">
+    <value>13. Summary</value>
+  </data>
+  <data name="PageDisplayName_Urn" xml:space="preserve">
+    <value>5. The Urn of Sacred Ashes</value>
+  </data>
+  <data name="ParagonAnvilResult_BrankaAlive" xml:space="preserve">
+    <value>Branka lived</value>
+  </data>
+  <data name="ParagonAnvilResult_BrankaSuicided" xml:space="preserve">
+    <value>Branka commit suicide</value>
+  </data>
+  <data name="ParagonAnvilResult_Caridin" xml:space="preserve">
+    <value>Caridin commit suicide</value>
+  </data>
+  <data name="ParagonAnvilResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ParagonKingResult_KingIsBhelen" xml:space="preserve">
+    <value>Bhelen</value>
+  </data>
+  <data name="ParagonKingResult_KingIsHarrowmont" xml:space="preserve">
+    <value>Harrowmont</value>
+  </data>
+  <data name="ParagonKingResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Race_Dwarf" xml:space="preserve">
+    <value>Dwarf</value>
+  </data>
+  <data name="Race_Elf" xml:space="preserve">
+    <value>Elf</value>
+  </data>
+  <data name="Race_Human" xml:space="preserve">
+    <value>Human</value>
+  </data>
+  <data name="RomanceOptions_AlistairLove" xml:space="preserve">
+    <value>Made love with Alistair</value>
+  </data>
+  <data name="RomanceOptions_AlistairRomance" xml:space="preserve">
+    <value>Romanced Alistair</value>
+  </data>
+  <data name="RomanceOptions_LelianaLove" xml:space="preserve">
+    <value>Made love with Leliana</value>
+  </data>
+  <data name="RomanceOptions_LelianaRomance" xml:space="preserve">
+    <value>Romanced Leliana</value>
+  </data>
+  <data name="RomanceOptions_MorriganLove" xml:space="preserve">
+    <value>Made love with Morrigan</value>
+  </data>
+  <data name="RomanceOptions_MorriganRomance" xml:space="preserve">
+    <value>Romanced Morrigan</value>
+  </data>
+  <data name="RomanceOptions_ZevranLove" xml:space="preserve">
+    <value>Made love with Zevran</value>
+  </data>
+  <data name="RomanceOptions_ZevranRomance" xml:space="preserve">
+    <value>Romanced Zevran</value>
+  </data>
+  <data name="ShaleResult_Killed" xml:space="preserve">
+    <value>Killed Shale</value>
+  </data>
+  <data name="ShaleResult_Left" xml:space="preserve">
+    <value>Shale left party</value>
+  </data>
+  <data name="ShaleResult_None" xml:space="preserve">
+    <value>Unplayed</value>
+  </data>
+  <data name="ShaleResult_Recruited" xml:space="preserve">
+    <value>Recruited Shale</value>
+  </data>
+  <data name="UrnOptions_GenitiviReturnedToDenerim" xml:space="preserve">
+    <value>Brother Genitivi returned to his home in Denerim</value>
+  </data>
+  <data name="WitchResult_Followed" xml:space="preserve">
+    <value>Followed</value>
+  </data>
+  <data name="WitchResult_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="WitchResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="WitchResult_Stabbed" xml:space="preserve">
+    <value>Stabbed</value>
+  </data>
+  <data name="WizardView_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="WizardView_Button_Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="WizardView_Button_MoveNext" xml:space="preserve">
+    <value>Next &gt;</value>
+  </data>
+  <data name="WizardView_Button_MovePrevious" xml:space="preserve">
+    <value>&lt; Back</value>
+  </data>
+  <data name="WizardView_Header_Steps" xml:space="preserve">
+    <value>Dragon Age</value>
+  </data>
+  <data name="ZevranResult_GoesHostile" xml:space="preserve">
+    <value>Betrayed the player</value>
+  </data>
+  <data name="ZevranResult_KilledBeforeIntroduction" xml:space="preserve">
+    <value>Killed before introduction</value>
+  </data>
+  <data name="ZevranResult_LeavesAfterKissingFarewell" xml:space="preserve">
+    <value>Left party after kissing farewell</value>
+  </data>
+  <data name="ZevranResult_LeavesForGood" xml:space="preserve">
+    <value>Left party for good</value>
+  </data>
+  <data name="ZevranResult_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+</root>

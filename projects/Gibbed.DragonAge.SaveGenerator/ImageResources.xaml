@@ -1,0 +1,52 @@
+﻿<!--
+/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
+ * 
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ * 
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ * 
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would
+ *    be appreciated but is not required.
+ * 
+ * 2. Altered source versions must be plainly marked as such, and must not
+ *    be misrepresented as being the original software.
+ * 
+ * 3. This notice may not be removed or altered from any source
+ *    distribution.
+ */
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- ReSharper disable InconsistentNaming -->
+    <!-- Gender images -->
+    <ImageSource x:Key="Gender_Male">Resources/Images/Origin/gender_male.png</ImageSource>
+    <ImageSource x:Key="Gender_Female">Resources/Images/Origin/gender_female.png</ImageSource>
+
+    <!-- Race images -->
+    <ImageSource x:Key="Race_Human_Male">Resources/Images/Origin/race_human_male.png</ImageSource>
+    <ImageSource x:Key="Race_Human_Female">Resources/Images/Origin/race_human_female.png</ImageSource>
+    <ImageSource x:Key="Race_Elf_Male">Resources/Images/Origin/race_elf_male.png</ImageSource>
+    <ImageSource x:Key="Race_Elf_Female">Resources/Images/Origin/race_elf_female.png</ImageSource>
+    <ImageSource x:Key="Race_Dwarf_Male">Resources/Images/Origin/race_dwarf_male.png</ImageSource>
+    <ImageSource x:Key="Race_Dwarf_Female">Resources/Images/Origin/race_dwarf_female.png</ImageSource>
+
+    <!-- Class images -->
+    <ImageSource x:Key="Class_Warrior">Resources/Images/Origin/class_warrior.png</ImageSource>
+    <ImageSource x:Key="Class_Mage">Resources/Images/Origin/class_mage.png</ImageSource>
+    <ImageSource x:Key="Class_Rogue">Resources/Images/Origin/class_rogue.png</ImageSource>
+
+    <!-- Backgrounds -->
+    <ImageSource x:Key="Background_Elf_Dalish">Resources/Images/Origin/background_elf_dalish.png</ImageSource>
+    <ImageSource x:Key="Background_Dwarf_Commoner">Resources/Images/Origin/background_dwarf_commoner.png</ImageSource>
+    <ImageSource x:Key="Background_Elf_City">Resources/Images/Origin/background_elf_city.png</ImageSource>
+    <ImageSource x:Key="Background_Magi">Resources/Images/Origin/background_magi.png</ImageSource>
+    <ImageSource x:Key="Background_Human_Noble">Resources/Images/Origin/background_human_noble.png</ImageSource>
+    <ImageSource x:Key="Background_Dwarf_Noble">Resources/Images/Origin/background_dwarf_noble.png</ImageSource>
+    <!-- ReSharper restore InconsistentNaming -->
+</ResourceDictionary>
