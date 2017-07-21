@@ -1,0 +1,6 @@
+[submodule "submodules/bioware"]
+	path = submodules/bioware
+	url = https://github.com/gibbed/Gibbed.Bioware.git
+[submodule "projects/Gibbed.IO"]
+	path = projects/Gibbed.IO
+	url = https://github.com/gibbed/Gibbed.IO.git
