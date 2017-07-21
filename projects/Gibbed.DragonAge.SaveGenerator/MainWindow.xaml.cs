@@ -1,27 +1,40 @@
-﻿using System;
+﻿/* Copyright (c) 2017 Rick (rick 'at' gibbed 'dot' us)
+ * 
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ * 
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ * 
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would
+ *    be appreciated but is not required.
+ * 
+ * 2. Altered source versions must be plainly marked as such, and must not
+ *    be misrepresented as being the original software.
+ * 
+ * 3. This notice may not be removed or altered from any source
+ *    distribution.
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.IO;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Gibbed.Bioware.FileFormats;
-using GFF = Gibbed.Bioware.FileFormats.GenericFileFormat;
-using Gibbed.DragonAge.SaveGenerator.ViewModel;
 using Gibbed.DragonAge.SaveGenerator.Resources;
+using Gibbed.DragonAge.SaveGenerator.ViewModel;
+using GFF = Gibbed.Bioware.FileFormats.GenericFileFormat;
 
 namespace Gibbed.DragonAge.SaveGenerator
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-        readonly WizardViewModel _WizardViewModel;
+        private readonly WizardViewModel _WizardViewModel;
 
         public MainWindow()
         {
@@ -29,7 +42,7 @@ namespace Gibbed.DragonAge.SaveGenerator
 
             this._WizardViewModel = new WizardViewModel();
             this._WizardViewModel.RequestClose += this.OnViewModelRequestClose;
-            base.DataContext = this._WizardViewModel; 
+            this.DataContext = this._WizardViewModel;
         }
 
         public Game.Plot Result
@@ -79,7 +92,9 @@ namespace Gibbed.DragonAge.SaveGenerator
             var filtered = this.Result.PlayerName;
 
             var regex = String.Format("[{0}]", Regex.Escape(new string(Path.GetInvalidFileNameChars())));
-            var removeInvalidChars = new Regex(regex, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.CultureInvariant);
+            var removeInvalidChars = new Regex(regex,
+                                               RegexOptions.Singleline | RegexOptions.Compiled |
+                                               RegexOptions.CultureInvariant);
             filtered = removeInvalidChars.Replace(filtered, "");
 
             var charPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -94,7 +109,7 @@ namespace Gibbed.DragonAge.SaveGenerator
             while (true)
             {
                 basePath = Path.Combine(charPath,
-                    string.Format("Slot_{0}", slot));
+                                        string.Format("Slot_{0}", slot));
                 if (Directory.Exists(basePath) == false)
                 {
                     break;
@@ -120,7 +135,9 @@ namespace Gibbed.DragonAge.SaveGenerator
             var root = new GenericKeyValue(GFF.FieldType.Structure, null);
             root.StructureId = 0;
 
-            root[16511] = new GenericKeyValue(GFF.FieldType.String, "Save created with Gibbed's Dragon Age Save Generator.\n\n*** DO NOT LOAD THIS SAVE IN DRAGON AGE: ORIGINS ***");
+            root[16511] = new GenericKeyValue(GFF.FieldType.String,
+                                              "Save created with Gibbed's Dragon Age Save Generator.\n\n" +
+                                              "*** DO NOT LOAD THIS SAVE IN DRAGON AGE: ORIGINS ***");
             root[16800] = new GenericKeyValue(GFF.FieldType.String, "Dragon Age 2");
             root[16801] = new GenericKeyValue(GFF.FieldType.Int32, 4271);
             root[16802] = new GenericKeyValue(GFF.FieldType.Int32, -1);
@@ -228,7 +245,8 @@ namespace Gibbed.DragonAge.SaveGenerator
             character[16227] = new GenericKeyValue(GFF.FieldType.Structure, null);
             character[16250] = new GenericKeyValue(GFF.FieldType.UInt8, (byte)0);
             character[16254] = new GenericKeyValue(GFF.FieldType.Int32, 0);
-            character[16255] = new GenericKeyValue(GFF.FieldType.TalkString, new GFF.Builtins.TalkString(215786, this.Result.PlayerName));
+            character[16255] = new GenericKeyValue(GFF.FieldType.TalkString,
+                                                   new GFF.Builtins.TalkString(215786, this.Result.PlayerName));
             character[16256] = new GenericKeyValue(GFF.FieldType.UInt32, (uint)1);
             character[16262] = new GenericKeyValue(GFF.FieldType.Single, 0.0f);
             character[16263] = new GenericKeyValue(GFF.FieldType.Int32, 0);
@@ -243,7 +261,8 @@ namespace Gibbed.DragonAge.SaveGenerator
             appearance[16324] = new GenericKeyValue(GFF.FieldType.Single, 0.0f);
             appearance[16325] = new GenericKeyValue(GFF.FieldType.UInt8, (byte)0);
             appearance[16326] = new GenericKeyValue(GFF.FieldType.Structure, null);
-            appearance[16327] = new GenericKeyValue(GFF.FieldType.UInt16, (ushort)(this.Result.PlayerGender == Game.PlayerGender.Male ? 1 : 2));
+            appearance[16327] = new GenericKeyValue(GFF.FieldType.UInt16,
+                                                    (ushort)(this.Result.PlayerGender == Game.PlayerGender.Male ? 1 : 2));
             appearance[16328] = new GenericKeyValue(GFF.FieldType.String, "");
             character[16320] = appearance;
 
@@ -594,7 +613,6 @@ namespace Gibbed.DragonAge.SaveGenerator
                     SetPlotFlag(plotList, "841A4E6E0CDD43D3BA3BA484D9A2771F", 5);
                     break;
                 }
-
             }
 
             switch (this.Result.LandsmeetAlistairResult)
