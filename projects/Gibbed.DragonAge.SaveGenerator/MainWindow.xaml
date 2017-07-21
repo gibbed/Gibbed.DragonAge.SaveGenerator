@@ -29,10 +29,11 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         Margin="0"
-        ResizeMode="CanMinimize"
-        Width="806"
-        Height="628"
-        SizeToContent="WidthAndHeight"
+        ResizeMode="CanResize"
+        MinWidth="800"
+        MinHeight="600"
+        Width="800"
+        Height="600"
         Icon="Resources/crest.ico">
     <view:WizardView />
 </Window>

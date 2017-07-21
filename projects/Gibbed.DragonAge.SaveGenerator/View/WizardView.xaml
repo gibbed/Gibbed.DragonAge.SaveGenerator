@@ -30,8 +30,8 @@
              xmlns:viewModel="clr-namespace:Gibbed.DragonAge.SaveGenerator.ViewModel"
              mc:Ignorable="d"
              x:Class="Gibbed.DragonAge.SaveGenerator.View.WizardView"
-             Width="800"
-             Height="600">
+             d:DesignWidth="800"
+             d:DesignHeight="600">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type viewModel:PlayerPageViewModel}">
             <view:PlayerPageView />
@@ -197,21 +197,29 @@
                         d:DesignHeight="600"
                         Width="Auto"
                         Height="Auto">
-                <Grid Margin="1"
-                      RenderTransformOrigin="0.5,0.5">
-                    <Grid.Effect>
+                <Border Margin="1"
+                        RenderTransformOrigin="0.5,0.5">
+                    <Border.Effect>
                         <DropShadowEffect ShadowDepth="0"
-                                          BlurRadius="4"
-                                          Color="#FFFFBA00"
+                                          BlurRadius="24"
+                                          Color="#FF000000"
                                           Direction="0" />
-                    </Grid.Effect>
-                    <ContentPresenter ContentSource="Header"
-                                      TextBlock.FontSize="22"
-                                      TextBlock.Foreground="#FFFFFDBF"
-                                      TextBlock.FontFamily="/Gibbed.DragonAge.SaveGenerator;component/Resources/Fonts/#Crimson"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center" />
-                </Grid>
+                    </Border.Effect>
+                    <Border>
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"
+                                              BlurRadius="4"
+                                              Color="#FFFFBA00"
+                                              Direction="0" />
+                        </Border.Effect>
+                        <ContentPresenter ContentSource="Header"
+                                          TextBlock.FontSize="22"
+                                          TextBlock.Foreground="#FFFFFDBF"
+                                          TextBlock.FontFamily="/Gibbed.DragonAge.SaveGenerator;component/Resources/Fonts/#Crimson"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                </Border>
                 <Grid>
                     <Rectangle Fill="{TemplateBinding Background}" />
                     <ContentPresenter ContentSource="Content" />
@@ -278,7 +286,7 @@
             </DataTemplate.Triggers>
         </DataTemplate>
     </UserControl.Resources>
-    <Grid Margin="1">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="..\Resources\Images\shield.jpg"
                         Stretch="UniformToFill" />
