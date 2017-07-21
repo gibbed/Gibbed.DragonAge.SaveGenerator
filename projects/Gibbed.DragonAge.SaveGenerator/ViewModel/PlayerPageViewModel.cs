@@ -32,7 +32,7 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
 {
     internal class PlayerPageViewModel : BasePageViewModel
     {
-        private ResourceDictionary Resources;
+        private readonly ResourceDictionary _Resources;
 
         private ReadOnlyCollection<OptionViewModel<Game.PlayerGender>> _AvailableGenders;
         private ReadOnlyCollection<OptionViewModel<Game.PlayerRace>> _AvailableRaces;
@@ -42,9 +42,9 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
         public PlayerPageViewModel(Game.Plot plot)
             : base(plot)
         {
-            this.Resources = new ResourceDictionary();
-            this.Resources.Source = new Uri("/Gibbed.DragonAge.SaveGenerator;component/ImageResources.xaml",
-                                            UriKind.RelativeOrAbsolute);
+            this._Resources = new ResourceDictionary();
+            this._Resources.Source = new Uri("/Gibbed.DragonAge.SaveGenerator;component/ImageResources.xaml",
+                                             UriKind.RelativeOrAbsolute);
         }
 
         public ReadOnlyCollection<OptionViewModel<Game.PlayerGender>> AvailableGenders
@@ -65,14 +65,16 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
             var list = new List<OptionViewModel<Game.PlayerGender>>();
             list.Add(new OptionViewModel<Game.PlayerGender>(
                          Strings.Gender_Male,
-                         new ImageBrush((ImageSource)this.Resources["Gender_Male"]),
+                         (ImageSource)this._Resources["Gender_Male"],
                          Game.PlayerGender.Male,
-                         0));
+                         0,
+                         "Gender"));
             list.Add(new OptionViewModel<Game.PlayerGender>(
                          Strings.Gender_Female,
-                         new ImageBrush((ImageSource)this.Resources["Gender_Female"]),
+                         (ImageSource)this._Resources["Gender_Female"],
                          Game.PlayerGender.Female,
-                         1));
+                         1,
+                         "Gender"));
 
             foreach (var option in list)
             {
@@ -120,19 +122,22 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
 
             list.Add(new OptionViewModel<Game.PlayerRace>(
                          Strings.Race_Human,
-                         new ImageBrush((ImageSource)this.Resources["Race_Human_Male"]),
+                         (ImageSource)this._Resources["Race_Human_Male"],
                          Game.PlayerRace.Human,
-                         0));
+                         0,
+                         "Race"));
             list.Add(new OptionViewModel<Game.PlayerRace>(
                          Strings.Race_Elf,
-                         new ImageBrush((ImageSource)this.Resources["Race_Elf_Male"]),
+                         (ImageSource)this._Resources["Race_Elf_Male"],
                          Game.PlayerRace.Elf,
-                         1));
+                         1,
+                         "Race"));
             list.Add(new OptionViewModel<Game.PlayerRace>(
                          Strings.Race_Dwarf,
-                         new ImageBrush((ImageSource)this.Resources["Race_Dwarf_Male"]),
+                         (ImageSource)this._Resources["Race_Dwarf_Male"],
                          Game.PlayerRace.Dwarf,
-                         2));
+                         2,
+                         "Race"));
 
             foreach (var option in list)
             {
@@ -180,19 +185,22 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
 
             list.Add(new OptionViewModel<Game.PlayerClass>(
                          Strings.Class_Warrior,
-                         new ImageBrush((ImageSource)this.Resources["Class_Warrior"]),
+                         (ImageSource)this._Resources["Class_Warrior"],
                          Game.PlayerClass.Warrior,
-                         0));
+                         0,
+                         "Class"));
             list.Add(new OptionViewModel<Game.PlayerClass>(
                          Strings.Class_Mage,
-                         new ImageBrush((ImageSource)this.Resources["Class_Mage"]),
+                         (ImageSource)this._Resources["Class_Mage"],
                          Game.PlayerClass.Mage,
-                         1));
+                         1,
+                         "Class"));
             list.Add(new OptionViewModel<Game.PlayerClass>(
                          Strings.Class_Rogue,
-                         new ImageBrush((ImageSource)this.Resources["Class_Rogue"]),
+                         (ImageSource)this._Resources["Class_Rogue"],
                          Game.PlayerClass.Rogue,
-                         2));
+                         2,
+                         "Class"));
 
             foreach (var option in list)
             {
@@ -240,34 +248,40 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
 
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Elf_Dalish,
-                         new ImageBrush((ImageSource)this.Resources["Background_Elf_Dalish"]),
+                         (ImageSource)this._Resources["Background_Elf_Dalish"],
                          Game.PlayerBackground.ElfDalish,
-                         0));
+                         0,
+                         "Background"));
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Dwarf_Commoner,
-                         new ImageBrush((ImageSource)this.Resources["Background_Dwarf_Commoner"]),
+                         (ImageSource)this._Resources["Background_Dwarf_Commoner"],
                          Game.PlayerBackground.DwarfCommoner,
-                         1));
+                         1,
+                         "Background"));
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Magi,
-                         new ImageBrush((ImageSource)this.Resources["Background_Magi"]),
+                         (ImageSource)this._Resources["Background_Magi"],
                          Game.PlayerBackground.Magi,
-                         2));
+                         2,
+                         "Background"));
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Elf_City,
-                         new ImageBrush((ImageSource)this.Resources["Background_Elf_City"]),
+                         (ImageSource)this._Resources["Background_Elf_City"],
                          Game.PlayerBackground.ElfCity,
-                         3));
+                         3,
+                         "Background"));
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Human_Noble,
-                         new ImageBrush((ImageSource)this.Resources["Background_Human_Noble"]),
+                         (ImageSource)this._Resources["Background_Human_Noble"],
                          Game.PlayerBackground.HumanNoble,
-                         4));
+                         4,
+                         "Background"));
             list.Add(new OptionViewModel<Game.PlayerBackground>(
                          Strings.Background_Dwarf_Noble,
-                         new ImageBrush((ImageSource)this.Resources["Background_Dwarf_Noble"]),
+                         (ImageSource)this._Resources["Background_Dwarf_Noble"],
                          Game.PlayerBackground.DwarfNoble,
-                         5));
+                         5,
+                         "Background"));
 
             foreach (var option in list)
             {

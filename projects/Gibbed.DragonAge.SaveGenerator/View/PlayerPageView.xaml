@@ -26,7 +26,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              x:Class="Gibbed.DragonAge.SaveGenerator.View.PlayerPageView"
-             xmlns:root="clr-namespace:Gibbed.DragonAge.SaveGenerator"
              mc:Ignorable="d"
              d:DesignHeight="477"
              d:DesignWidth="500"
@@ -34,76 +33,104 @@
              Height="Auto"
              VerticalContentAlignment="Top">
     <UserControl.Resources>
-        <root:NullableBooleanAlternationConverter x:Key="IconConverter">
-            <Style />
-            <Style TargetType="{x:Type RadioButton}">
-                <Setter Property="Margin"
-                        Value="4" />
-            </Style>
-            <Style TargetType="{x:Type RadioButton}">
-                <Setter Property="OverridesDefaultStyle"
-                        Value="True" />
-                <Setter Property="Foreground"
-                        Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
-                <Setter Property="BorderBrush"
-                        Value="#8E8F8F" />
-                <Setter Property="BorderThickness"
-                        Value="1" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type RadioButton}">
-                            <Border x:Name="OuterBorder"
-                                    BorderBrush="#00000000"
-                                    BorderThickness="1"
-                                    Height="68"
-                                    Width="68"
-                                    Padding="5">
-                                <Border x:Name="InnerBorder"
-                                        BorderBrush="#00000000"
-                                        BorderThickness="1"
-                                        Height="56"
-                                        Width="56"
-                                        Background="{TemplateBinding Background}" />
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsFocused"
-                                         Value="True">
-                                    <Setter Property="BorderBrush"
-                                            TargetName="OuterBorder"
-                                            Value="White" />
-                                </Trigger>
-                                <Trigger Property="IsMouseOver"
-                                         Value="True">
-                                    <Setter Property="BorderBrush"
-                                            TargetName="OuterBorder"
-                                            Value="White" />
-                                </Trigger>
-                                <Trigger Property="IsChecked"
-                                         Value="True">
-                                    <Setter Property="BorderBrush"
-                                            TargetName="InnerBorder"
-                                            Value="White" />
-                                </Trigger>
-                                <Trigger Property="IsEnabled"
-                                         Value="false">
-                                    <Setter Property="OpacityMask"
-                                            TargetName="InnerBorder"
-                                            Value="#26000000" />
-                                    <Setter Property="BorderBrush"
-                                            TargetName="InnerBorder"
-                                            Value="#00000000" />
-                                    <Setter Property="BorderBrush"
-                                            TargetName="OuterBorder"
-                                            Value="#00000000" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FocusVisualStyle"
-                        Value="{x:Null}" />
-            </Style>
-        </root:NullableBooleanAlternationConverter>
+        <DataTemplate x:Key="TextChoiceTemplate">
+            <RadioButton GroupName="{Binding GroupName}"
+                         Width="Auto"
+                         Height="Auto"
+                         Margin="4"
+                         Content="{Binding DisplayName}"
+                         ToolTip="{Binding DisplayName}"
+                         IsChecked="{Binding IsSelected}"
+                         Foreground="White"
+                         SnapsToDevicePixels="True" />
+        </DataTemplate>
+        <ControlTemplate x:Key="IconChoiceControlTemplate">
+            <Image x:Name="Image"
+                   Source="{Binding DisplayImage}" />
+        </ControlTemplate>
+        <DataTemplate x:Key="IconChoiceDataTemplate">
+            <Border x:Name="OuterBorder"
+                    BorderBrush="#00000000"
+                    BorderThickness="1"
+                    Height="68"
+                    Width="68"
+                    Padding="5"
+                    Focusable="False">
+                <Border x:Name="InnerBorder"
+                        BorderBrush="#00000000"
+                        BorderThickness="1"
+                        Height="56"
+                        Width="56"
+                        Focusable="False">
+                    <RadioButton x:Name="RadioButton"
+                                 GroupName="{Binding GroupName}"
+                                 ToolTip="{Binding DisplayName}"
+                                 IsChecked="{Binding IsSelected}"
+                                 Width="Auto"
+                                 Height="Auto"
+                                 OverridesDefaultStyle="True"
+                                 SnapsToDevicePixels="True"
+                                 Template="{StaticResource IconChoiceControlTemplate}" />
+                </Border>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ElementName=RadioButton, Path=IsFocused}"
+                             Value="True">
+                    <Setter Property="BorderBrush"
+                            TargetName="OuterBorder"
+                            Value="Gray" />
+                </DataTrigger>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                    <Setter Property="BorderBrush"
+                            TargetName="OuterBorder"
+                            Value="White" />
+                </Trigger>
+                <DataTrigger Binding="{Binding IsSelected}"
+                             Value="True">
+                    <Setter Property="BorderBrush"
+                            TargetName="InnerBorder"
+                            Value="White" />
+                </DataTrigger>
+                <Trigger Property="IsEnabled"
+                         Value="false">
+                    <Setter Property="OpacityMask"
+                            TargetName="InnerBorder"
+                            Value="#26000000" />
+                    <Setter Property="BorderBrush"
+                            TargetName="InnerBorder"
+                            Value="#00000000" />
+                    <Setter Property="BorderBrush"
+                            TargetName="OuterBorder"
+                            Value="#00000000" />
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <Style x:Key="ChoiceTemplateStyle"
+               TargetType="{x:Type ContentControl}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsChecked, ElementName=ShowIcons}"
+                             Value="{x:Null}">
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource TextChoiceTemplate}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsChecked, ElementName=ShowIcons}"
+                             Value="False">
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource TextChoiceTemplate}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsChecked, ElementName=ShowIcons}"
+                             Value="True">
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource IconChoiceDataTemplate}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <DataTemplate x:Key="ChoiceTemplate">
+            <ContentControl Content="{Binding}"
+                            Style="{StaticResource ChoiceTemplateStyle}"
+                            Focusable="False" />
+        </DataTemplate>
     </UserControl.Resources>
     <StackPanel>
         <GroupBox Header="Name"
@@ -114,7 +141,7 @@
         <GroupBox Header="{x:Null}"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top">
-            <CheckBox x:Name="groupBox"
+            <CheckBox x:Name="ShowIcons"
                       Content="Show Icons"
                       Foreground="White"
                       HorizontalAlignment="Left"
@@ -124,91 +151,50 @@
         <WrapPanel>
             <GroupBox Header="Gender"
                       Margin="0">
-                <ItemsControl ItemsSource="{Binding AvailableGenders}">
+                <ItemsControl ItemsSource="{Binding AvailableGenders}"
+                              ItemTemplate="{StaticResource ChoiceTemplate}"
+                              Focusable="False">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
+                            <WrapPanel Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Gender"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         Background="{Binding DisplayBrush}"
-                                         Style="{Binding IsChecked, Converter={StaticResource IconConverter}, ElementName=groupBox}"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-
-                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </GroupBox>
             <GroupBox Header="Race"
                       Margin="0">
-                <ItemsControl ItemsSource="{Binding AvailableRaces}">
+                <ItemsControl ItemsSource="{Binding AvailableRaces}"
+                              ItemTemplate="{StaticResource ChoiceTemplate}"
+                              Focusable="False">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
+                            <WrapPanel Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Race"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         Background="{Binding DisplayBrush}"
-                                         Style="{Binding IsChecked, Converter={StaticResource IconConverter}, ElementName=groupBox}"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </GroupBox>
             <GroupBox Header="Class"
                       Margin="0">
-                <ItemsControl ItemsSource="{Binding AvailableClasses}">
+                <ItemsControl ItemsSource="{Binding AvailableClasses}"
+                              ItemTemplate="{StaticResource ChoiceTemplate}"
+                              Focusable="False">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
+                            <WrapPanel Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Class"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         Background="{Binding DisplayBrush}"
-                                         Style="{Binding IsChecked, Converter={StaticResource IconConverter}, ElementName=groupBox}"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </GroupBox>
             <GroupBox Header="Background"
                       Margin="0">
-                <ItemsControl ItemsSource="{Binding AvailableBackgrounds}">
+                <ItemsControl ItemsSource="{Binding AvailableBackgrounds}"
+                              ItemTemplate="{StaticResource ChoiceTemplate}"
+                              Focusable="False">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
+                            <WrapPanel Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton GroupName="Background"
-                                         Content="{Binding DisplayName}"
-                                         ToolTip="{Binding DisplayName}"
-                                         IsChecked="{Binding IsSelected}"
-                                         Foreground="White"
-                                         Background="{Binding DisplayBrush}"
-                                         Style="{Binding IsChecked, Converter={StaticResource IconConverter}, ElementName=groupBox}"
-                                         SnapsToDevicePixels="True" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </GroupBox>
         </WrapPanel>

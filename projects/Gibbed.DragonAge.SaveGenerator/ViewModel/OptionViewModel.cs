@@ -36,22 +36,34 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
         private const int _UnsetSortValue = Int32.MinValue;
 
         private readonly string _DisplayName;
-        private readonly Brush _DisplayBrush;
-        private bool _IsSelected;
+        private readonly ImageSource _DisplayImage;
         private readonly int _SortValue;
         private readonly TValue _Value;
+        private readonly string _GroupName;
+        private bool _IsSelected;
 
-        public OptionViewModel(string displayName, Brush displayBrush, TValue value)
-            : this(displayName, displayBrush, value, _UnsetSortValue)
+        public OptionViewModel(string displayName, ImageSource displayImage, TValue value)
+            : this(displayName, displayImage, value, _UnsetSortValue, null)
         {
         }
 
-        public OptionViewModel(string displayName, Brush displayBrush, TValue value, int sortValue)
+        public OptionViewModel(string displayName, ImageSource displayImage, TValue value, int sortValue)
+            : this(displayName, displayImage, value, sortValue, null)
+        {
+        }
+
+        public OptionViewModel(string displayName, ImageSource displayImage, TValue value, string groupName)
+            : this(displayName, displayImage, value, _UnsetSortValue, groupName)
+        {
+        }
+
+        public OptionViewModel(string displayName, ImageSource displayImage, TValue value, int sortValue, string groupName)
         {
             this._DisplayName = displayName;
-            this._DisplayBrush = displayBrush;
+            this._DisplayImage = displayImage;
             this._Value = value;
             this._SortValue = sortValue;
+            this._GroupName = groupName;
         }
 
         public string DisplayName
@@ -59,9 +71,9 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
             get { return this._DisplayName; }
         }
 
-        public Brush DisplayBrush
+        public ImageSource DisplayImage
         {
-            get { return this._DisplayBrush; }
+            get { return this._DisplayImage; }
         }
 
         public bool IsSelected
@@ -87,6 +99,11 @@ namespace Gibbed.DragonAge.SaveGenerator.ViewModel
         internal TValue GetValue()
         {
             return this._Value;
+        }
+
+        public string GroupName
+        {
+            get { return this._GroupName; }
         }
 
         public int CompareTo(OptionViewModel<TValue> other)

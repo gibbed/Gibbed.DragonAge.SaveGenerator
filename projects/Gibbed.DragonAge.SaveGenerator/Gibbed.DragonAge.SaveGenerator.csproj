@@ -94,7 +94,6 @@
     <Compile Include="Game\PlotFlags\UrnOptions.cs" />
     <Compile Include="Game\PlotFlags\WitchResult.cs" />
     <Compile Include="Game\PlotFlags\ZevranResult.cs" />
-    <Compile Include="NullableBooleanAlternationConverter.cs" />
     <Compile Include="Game\Plot.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>

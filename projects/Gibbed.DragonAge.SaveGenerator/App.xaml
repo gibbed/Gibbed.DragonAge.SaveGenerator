@@ -65,7 +65,6 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-
             <ControlTemplate x:Key="DefaultButtonControlTemplate"
                              TargetType="{x:Type Button}">
                 <Border x:Name="Border"
