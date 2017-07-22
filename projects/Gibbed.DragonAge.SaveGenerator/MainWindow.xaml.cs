@@ -108,8 +108,7 @@ namespace Gibbed.DragonAge.SaveGenerator
             int slot = 1;
             while (true)
             {
-                basePath = Path.Combine(charPath,
-                                        string.Format("Slot_{0}", slot));
+                basePath = Path.Combine(charPath, string.Format("Slot_{0}", slot));
                 if (Directory.Exists(basePath) == false)
                 {
                     break;
@@ -120,13 +119,15 @@ namespace Gibbed.DragonAge.SaveGenerator
             Directory.CreateDirectory(basePath);
 
             using (var output = File.Create(Path.Combine(basePath, "Barkspawn.das.met")))
+            using (var info = this.CreateInfo(slot))
             {
-                this.CreateInfo(slot).Serialize(output);
+                info.Serialize(output);
             }
 
             using (var output = File.Create(Path.Combine(basePath, "Barkspawn.das")))
+            using (var save = this.CreateSave())
             {
-                this.CreateSave().Serialize(output);
+                save.Serialize(output);
             }
         }
 
@@ -151,7 +152,10 @@ namespace Gibbed.DragonAge.SaveGenerator
             root[16810] = new GenericKeyValue(GFF.FieldType.String, "SP;");
 
             var gff = new GenericDataFile();
-            gff.Deserialize(new MemoryStream(BinaryResources.InfoGFF));
+            using (var data = new MemoryStream(BinaryResources.InfoGFF))
+            {
+                gff.Deserialize(data);
+            }
             gff.Import(root);
             return gff;
         }
@@ -261,8 +265,7 @@ namespace Gibbed.DragonAge.SaveGenerator
             appearance[16324] = new GenericKeyValue(GFF.FieldType.Single, 0.0f);
             appearance[16325] = new GenericKeyValue(GFF.FieldType.UInt8, (byte)0);
             appearance[16326] = new GenericKeyValue(GFF.FieldType.Structure, null);
-            appearance[16327] = new GenericKeyValue(GFF.FieldType.UInt16,
-                                                    (ushort)(this.Result.PlayerGender == Game.PlayerGender.Male ? 1 : 2));
+            appearance[16327] = new GenericKeyValue(GFF.FieldType.UInt16, (ushort)this.Result.PlayerGender);
             appearance[16328] = new GenericKeyValue(GFF.FieldType.String, "");
             character[16320] = appearance;
 
@@ -1018,7 +1021,10 @@ namespace Gibbed.DragonAge.SaveGenerator
             }
 
             var gff = new GenericDataFile();
-            gff.Deserialize(new MemoryStream(BinaryResources.SaveGFF));
+            using (var data = new MemoryStream(BinaryResources.SaveGFF))
+            {
+                gff.Deserialize(data);
+            }
             gff.Import(root);
             return gff;
         }
